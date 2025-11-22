@@ -1,0 +1,28 @@
+# Project Overview
+
+This project is a console-based To-Do List application.  
+It allows users to add, view, and delete tasks.  
+
+The project was developed using:
+- Visual Studio Code
+- Git for version control
+- GitHub for hosting the repository
+
+The main goal was to understand basic software development workflow.
+
+# Development Process
+
+1. Created a new folder for the project.
+2. Wrote the Python code in VS Code.
+3. Initialized Git using `git init`.
+4. Added multiple commits for different features.
+5. Created an empty GitHub repo.
+6. Connected local repo to GitHub using:
+   - `git remote add origin <repo link>`
+   - `git push -u origin main`
+7. Added README.md and documentation folder.
+
+## Future Improvements
+- Add saving tasks permanently
+- Add task completion status
+- Build a GUI version
