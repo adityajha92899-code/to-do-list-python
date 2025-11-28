@@ -1,40 +1,35 @@
-todo_list = []
+def add_task(tasks):
+    task = input("Enter the task description: ")
+    tasks.append(task)
+    print(f"Task '{task}' added successfully.")
 
-def show_menu():
-    print("\n--- TO-DO LIST APP ---")
-    print("1. Add Task")
-    print("2. View Tasks")
-    print("3. Delete Task")
-    print("4. Exit")
-
-while True:
-    show_menu()
-    choice = input("Enter your choice: ")
-
-    if choice == "1":
-        task = input("Enter task: ")
-        todo_list.append(task)
-        print("Task added.")
-
-    elif choice == "2":
-        if len(todo_list) == 0:
-            print("No tasks yet.")
-        else:
-            print("\nYour Tasks:")
-            for i, t in enumerate(todo_list):
-                print(f"{i+1}. {t}")
-
-    elif choice == "3":
-        task_no = int(input("Enter task number to delete: "))
-        if 1 <= task_no <= len(todo_list):
-            todo_list.pop(task_no - 1)
-            print("Task deleted.")
-        else:
-            print("Invalid task number.")
-
-    elif choice == "4":
-        print("Exiting...")
-        break
-
+def view_tasks(tasks):
+    print("\n--- Your Tasks ---")
+    if not tasks:
+        print("Your to-do list is empty.")
     else:
-        print("Invalid choice. Try again.")
+        for index, task in enumerate(tasks, start=1):
+            print(f"{index}. {task}")
+
+def main():
+    tasks = []
+    while True:
+        print("\n--- To-Do List Menu ---")
+        print("1. Add Task")
+        print("2. View Tasks")
+        print("3. Exit")
+        
+        choice = input("Enter your choice (1-3): ")
+        
+        if choice == '1':
+            add_task(tasks)
+        elif choice == '2':
+            view_tasks(tasks)
+        elif choice == '3':
+            print("Exiting program. Goodbye!")
+            break
+        else:
+            print("Invalid choice, please try again.")
+
+if __name__ == "__main__":
+    main()
